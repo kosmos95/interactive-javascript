@@ -4,8 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>스와이프 갤러리</title>
-	<link rel="icon" href="img/favicon.ico" type="image/x-icon">	
+	<title>스와이프 갤러리</title>	
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 	<link rel="stylesheet" href="css/style.css">	
 	<script src="https://kit.fontawesome.com/c47106c6a7.js" crossorigin="anonymous"></script>
@@ -82,12 +81,17 @@
             direction: "horizontal", /*스와이프 방향*/
             loop:true, /*순환여부*/
             pagination: {
-                el: '.swiper-pagination' /*페이지 메뉴*/
+                el: '.swiper-pagination', /*페이지 메뉴*/
+                type: 'fraction' /*페이지 버튼 대신 번호 출력*/
             },
             navigation: {
                 nextEl: '.swiper-pagination-next', /*다음 버튼*/
                 prevEl: '.swiper-pagination-next', /*이전 버튼*/
             },
-            spaceBetween : 50
+            spaceBetween : 50, 
+            slidesPreview: "auto", /*css에 지정한 슬라이더의 크기를 반영*/
+            grabCursor:true, /*스와이프시 마우스 포인터 모양 변경*/
+            centeredSliders:true,  /*슬라이더 패널을 항상 가운데로 정렬*/
+            speed:1000 /*슬라이더 이동 속도 지정*/
         });
     </script>
