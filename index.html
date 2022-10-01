@@ -16,8 +16,8 @@
 		<h1>UI/UX <span>PORTFOLIO</span></h1>
 
 		<ul class="auto">
-			<li class="btnStart"><img src="img/start.png"></img></li>
-			<li class="btnStop"><img src="img/stop.png"></i></li>
+			<li class="btnStart"><i class="fas fa-play"></i></li>
+			<li class="btnStop"><i class="fas fa-pause"></i></li>
 		</ul>
 
 <div class="swiper-wrapper">
@@ -88,10 +88,37 @@
                 nextEl: '.swiper-pagination-next', /*다음 버튼*/
                 prevEl: '.swiper-pagination-next', /*이전 버튼*/
             },
-            spaceBetween : 50, 
-            slidesPreview: "auto", /*css에 지정한 슬라이더의 크기를 반영*/
+            spaceBetween : 0, 
+            slidesPerView: "auto", /*css에 지정한 슬라이더의 크기를 반영*/
             grabCursor:true, /*스와이프시 마우스 포인터 모양 변경*/
             centeredSliders:true,  /*슬라이더 패널을 항상 가운데로 정렬*/
-            speed:1000 /*슬라이더 이동 속도 지정*/
+            speed:1000, /*슬라이더 이동 속도 지정*/
+            effect:"coverflow",
+            coverflowEffect: {
+				rotate: 50,
+				stretch: -100,
+				depth: 400,
+				modifier: 1,
+				slideShadows: false,
+			},
+			autoplay: {
+				delay:1000,		
+				disableOnInteraction : true
+			}	
         });
+
+        // .btnStart 요소를 찾아서 btnStart에 저장
+		const btnStart = document.querySelector(".btnStart");
+		// .btnStop 요소를 찾아서 btnStop에 저장
+		const btnStop = document.querySelector(".btnStop");
+
+		//btnStart버튼을 클릭시 자동롤링 시작
+		btnStart.addEventListener("click",()=>{
+			swiper.autoplay.start();
+		});
+
+		//btnStart버튼을 클릭시 자동롤링 정지
+		btnStop.addEventListener("click",()=>{
+			swiper.autoplay.stop();
+		});
     </script>
