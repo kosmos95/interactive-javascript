@@ -76,3 +76,18 @@
 		<!-- 페이징 버튼 -->
 		<div class="swiper-pagination"></div>
 	</div>
+
+    <script>
+        const swiper = new Swiper('.wrap', { /*프레임의 요소명*/
+            direction: "horizontal", /*스와이프 방향*/
+            loop:true, /*순환여부*/
+            pagination: {
+                el: '.swiper-pagination' /*페이지 메뉴*/
+            },
+            navigation: {
+                nextEl: '.swiper-pagination-next', /*다음 버튼*/
+                prevEl: '.swiper-pagination-next', /*이전 버튼*/
+            },
+            spaceBetween : 50
+        });
+    </script>
